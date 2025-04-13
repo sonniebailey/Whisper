@@ -31,5 +31,30 @@
     </div>
 
     <script src="script.js"></script>
+
+    <!-- Settings Panel (Initially Hidden) -->
+    <div class="settings-panel" id="settings-panel">
+        <h2>Settings</h2>
+        <button class="close-settings-btn" id="close-settings-btn">
+            <span class="material-icons">close</span>
+        </button>
+        
+        <!-- Settings Content -->
+        <div class="setting-item">
+            <label for="point-specific-toggle">Point questions to specific people:</label>
+            <input type="checkbox" id="point-specific-toggle" class="toggle-switch">
+        </div>
+
+        <hr class="settings-divider">
+
+        <div class="setting-item participant-management">
+            <h3>Manage Participants</h3>
+            <div class="participant-input-group">
+                <input type="text" id="new-participant-name" placeholder="Enter name...">
+                <button id="add-participant-btn">Add</button>
+            </div>
+            <ul id="participant-list-settings"></ul>
+        </div>
+    </div>
 </body>
 </html>
