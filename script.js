@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const settingsBtn = document.querySelector('.settings-btn');
     const settingsPanel = document.getElementById('settings-panel');
     const closeSettingsBtn = document.getElementById('close-settings-btn');
+    const settingsOverlay = document.getElementById('settings-overlay');
 
     // --- New Settings Element References ---
     const pointSpecificToggle = document.getElementById('point-specific-toggle');
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Set initial introductory text (check if element exists)
     if (questionElement) {
-        questionElement.textContent = 'Whisper is an app that helps you have deeper conversations. It asks you a question, and someone can give an answer. Click the button below for the first question.';
+        questionElement.textContent = 'Whisper is an app that helps you have deeper conversations.  Click the button below for the first question.';
     }
     if (participantElement) {
         participantElement.textContent = '';
@@ -191,20 +192,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
     // Settings Panel Logic (Show/Hide)
-    if (settingsBtn && settingsPanel) {
+    if (settingsBtn && settingsPanel && settingsOverlay) {
         settingsBtn.addEventListener('click', () => {
+            settingsOverlay.classList.add('visible');
             settingsPanel.classList.add('visible');
-            renderParticipantList(); // Ensure list is up-to-date when opened
+            renderParticipantList();
         });
     }
-    if (closeSettingsBtn && settingsPanel) {
+    if (closeSettingsBtn && settingsPanel && settingsOverlay) {
         closeSettingsBtn.addEventListener('click', () => {
+            settingsOverlay.classList.remove('visible');
             settingsPanel.classList.remove('visible');
         });
     }
-    if (settingsPanel && settingsBtn) {
-        document.addEventListener('click', (event) => {
-            if (!settingsPanel.contains(event.target) && !settingsBtn.contains(event.target)) {
+    if (settingsPanel && settingsBtn && settingsOverlay) {
+        settingsOverlay.addEventListener('click', () => {
+            settingsOverlay.classList.remove('visible');
+            settingsPanel.classList.remove('visible');
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && settingsPanel.classList.contains('visible')) {
+                settingsOverlay.classList.remove('visible');
                 settingsPanel.classList.remove('visible');
             }
         });
