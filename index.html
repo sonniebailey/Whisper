@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whisper</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1 class="app-title">whisper</h1>
+            <button class="settings-btn">
+                <span class="material-icons">settings</span>
+            </button>
+        </header>
+
+        <div class="card" id="question-card">
+            <p class="question" id="current-question"></p>
+        </div>
+        
+        <div class="card" id="participant-card">
+            <p class="participant" id="selected-participant"></p>
+        </div>
+
+        <button class="roll-btn" id="roll-btn">
+            <span class="material-icons">refresh</span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

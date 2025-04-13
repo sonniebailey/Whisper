@@ -1,0 +1,171 @@
+:root {
+    --app-font: 'EB Garamond', Garamond, 'Times New Roman', serif;
+}
+
+body {
+    font-family: var(--app-font);
+    background-color: #f8f6f3;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px 20px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.app-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.app-title {
+    font-family: var(--app-font);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #34495e;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.settings-btn {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #34495e;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+
+.settings-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: rotate(30deg);
+    opacity: 0.9;
+}
+
+.settings-btn .material-icons {
+    font-size: 20px;
+}
+
+.container > *:last-child {
+    margin-top: 20px; /* Additional spacing above button */
+}
+
+.card {
+    background-color: #fdfbf9; /* Subtle warm tone instead of pure white */
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#question-card {
+    min-height: 450px;
+    height: 450px;
+}
+
+#participant-card {
+    min-height: 140px; /* Increased by 40% from 100px */
+    height: 140px;
+    padding: 30px 40px;
+}
+
+.question, .participant {
+    font-family: var(--app-font);
+    font-size: 1.875rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #34495e;
+    margin: 0;
+    opacity: 1;
+    transition: all 0.3s ease;
+    max-width: 100%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.reveal-question, .reveal-participant {
+    animation: reveal 1.2s ease-out forwards;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.roll-btn {
+    font-family: var(--app-font);
+    background: linear-gradient(45deg, #9B8174, #C4A99D); /* Subtle rose-taupe gradient */
+    color: #fdfbf9;
+    border: none;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(155, 129, 116, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.roll-btn .material-icons {
+    font-size: 48px;
+}
+
+.roll-btn:hover {
+    background: linear-gradient(45deg, #8A7267, #9B8174); /* Darker version for hover */
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(155, 129, 116, 0.4);
+}
+
+.roll-btn:active {
+    transform: translateY(1px);
+}
+
+.participants,
+.participant-list {
+    display: none;
+}
+
+.rolling {
+    animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from { opacity: 1; }
+    to { opacity: 0.8; }
+}
