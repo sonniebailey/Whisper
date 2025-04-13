@@ -356,3 +356,72 @@ body {
 #participant-list-settings .remove-participant-btn:hover {
     opacity: 1;
 }
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Allow container to shrink */
+        padding: 15px 15px 30px;
+        gap: 30px;
+    }
+
+    .card {
+        padding: 30px 20px; /* Reduce card padding */
+    }
+
+    #question-card {
+        min-height: 350px; /* Reduce height */
+        height: 350px;
+    }
+
+    #participant-card {
+        min-height: 100px; /* Reduce height */
+        height: 100px;
+        padding: 20px; /* Reduce padding */
+    }
+
+    .question, .participant {
+        font-size: 1.5rem; /* Reduce font size */
+        padding: 15px;
+    }
+
+    .roll-btn {
+        width: 80px; /* Reduce button size */
+        height: 80px;
+        box-shadow: 0 8px 15px rgba(155, 129, 116, 0.3);
+    }
+
+    .roll-btn .material-icons {
+        font-size: 40px; /* Reduce icon size */
+    }
+
+    .roll-btn:hover {
+        box-shadow: 0 12px 20px rgba(155, 129, 116, 0.4);
+    }
+    
+    .app-header {
+        margin-bottom: 10px;
+    }
+
+    .app-title {
+        font-size: 1rem;
+    }
+
+    .settings-panel {
+        width: 85%; /* Make settings panel wider on smaller screens */
+        max-width: 320px; /* But not excessively wide */
+    }
+
+    .setting-item label {
+         font-size: 0.9rem; /* Slightly smaller labels */
+    }
+
+     .participant-input-group input[type="text"],
+     .participant-input-group button {
+         font-size: 0.85rem; /* Adjust input/button font size */
+     }
+
+     #participant-list-settings li {
+         font-size: 0.9rem; /* Adjust list font size */
+     }
+}
